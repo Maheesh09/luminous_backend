@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "users")
 @Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@NoArgsConstructor @AllArgsConstructor //
 @Builder
 
 public class User {
@@ -26,6 +26,9 @@ public class User {
 
     @Column(name = "phone",length = 20)
     private String phone;
+
+    @Column(name = "email", nullable = false, length = 100, unique = true)
+    private String email;
 
     @Column(name = "password_hash",nullable = false,length = 255)
     private String passwordHash;
